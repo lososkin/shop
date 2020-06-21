@@ -1,0 +1,117 @@
+<!-- header -->
+<header class="header">
+    <div class="container-fluid px-lg-5">
+        <!-- nav -->
+        <nav class="py-4">
+            <div id="logo">
+                <h1> <a class="editContent" style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(255, 255, 255); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif;">Magazin Safiya</a></h1>
+            </div>
+
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop">
+            <ul class="menu mt-2">
+                <li class="active"><a href="/">Главная</a></li>
+                <li>
+                    <a href="{% url 'get_cart' %}">&#128722; <b>КОРЗИНА</b></a>
+                </li>
+                <li>
+                    {% if user.is_authenticated %}
+                    <span>{{ user.username }}</span>
+                        <a href="{% url 'account_logout' %}"
+                           style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                            Выход
+                        </a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                        Вход
+                    </a>
+                    <a href="{% url 'account_signup' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                        Регистрация
+                    </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+<!-- //header -->
+<!--/banner-->
+<!--// banner-inner -->
+<style>
+    .input-number {
+    position: relative;
+    display: inline-block;
+    }
+
+    .form-control.form-number {
+    width: 110px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    text-align: center;
+    height: 50px;
+    float: left;
+    background: #ccc;
+    }
+
+    .btn-count-minus {
+    bottom: 0;
+    }
+    .btn-count-plus {
+    top: 0;
+    }
+
+    .btn-count {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 50%;
+    background: #60a645;
+    border-radius: 0;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 9999;
+    cursor: pointer;
+    }
+
+    .btn-default {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: top;
+    display: inline-block;
+    background-color: rgb(96, 166, 69);
+    padding: 0 30px;
+    border-radius: 3px;
+    }
+
+    .btn-default:hover{
+    background-color:#7ad258;
+    }
+    .btn-default {
+    height: 50px;
+    line-height: 50px;
+    }
+
+    a {
+    text-decoration: none;
+    }
+</style>
+<script>
+    function change(objName, min, max, step) {
+        var obj = document.getElementById(objName);
+        var tmp = +obj.value + step;
+        if (tmp<min) tmp=min;
+        if (tmp>max) tmp=max;
+        obj.value = tmp;
+    }
+    function changevalue(){
+         var obj = document.getElementById('amount');
+         if (obj.value==''){
+            obj.value = 1;
+         }
+    }
+</script>

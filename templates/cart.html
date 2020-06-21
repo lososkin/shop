@@ -1,0 +1,38 @@
+{% extends 'products/base.html' %}
+{% block title %} Корзина {% endblock title %}
+{% block header %} bg1 {% endblock header %}
+{% block tovar %}
+         <table class="basket-table">
+             {% for item in cart %}
+             <tr>
+             <th>&nbsp;</th>
+             <th>Наименование</th>
+             <th>Количество</th>
+             <th>Цена</th>
+             </tr>
+
+             <tr>
+             <td>
+                <img src="/{{ item.product.img.url }}" class="img-fluid" width="150">
+             </td>
+             <td>{{ item.product.name }}</td>
+             <td>{{ item.quantity }}</td>
+             <td>{{ item.total_price }}</td>
+             <td>
+                <div class="btn btn-success btn-buy">
+                    <a href="{% url 'remove_from_cart' item.product.id %}" style="color: red;">Удалить</a>
+                </div>
+             </td>
+             </tr>
+             {% endfor %}
+             {% if summary %}
+             <th>&nbsp;</th>
+             <th>&nbsp;</th>
+             <th>Общая сумма:</th>
+             <th>
+                 {{ summary }}₽
+                 <a href="/buy/" class="btn btn-success btn-buy">Купить</a>
+             </th>
+             {% endif %}
+         </table>
+{% endblock tovar %}

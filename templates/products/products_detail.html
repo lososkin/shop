@@ -1,0 +1,52 @@
+{% extends 'products/base.html' %}
+{% block title %} {{ products_detail.name }} {% endblock title %}
+{% block header %} bg1 {% endblock header %}
+{% block tovar %}
+    <div class="left-ads-display col-lg-8">
+        <div class="row">
+            <div class="desc1-left col-md-6">
+                <img src="/{{ products_detail.img.url }}" class="img-fluid" alt="">
+            </div>
+            <div class="desc1-right col-md-6 pl-lg-4">
+                <h1 class="editContent" style="outline: none; cursor: inherit;">
+                    {{ products_detail.name }}
+                </h1>
+                <h5 class="editContent"></h5>
+                <ul>
+                    <li style="list-style: none">
+                        <span><b>Дата выпуска:</b> {{ products_detail.date }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Описание:</b> {{ products_detail.description }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span class="money editContent"><b>Цена:</b>{{ products_detail.unit_price }}₽</span>
+                    </li>
+                </ul>
+                {% if count %}
+                    <b>Количсетво в корзине:</b> {{ count }}
+                {% endif %}
+                 <form method="post">
+                     {% csrf_token %}
+                        <span class="input-number ">
+                        <input id="amount" type="number" name="count" value="1" onchange="changevalue()" class="form-control form-number ">
+                        <div class="btn-count btn-count-plus" value="+" onClick="change('amount',1,1000, 1);">+</div>
+                        <div class="btn-count btn-count-minus" value="-" onClick="change('amount',1,1000,-1);">-</div>
+                        </span>
+                     <input class="btn-default" type="submit" value="В корзину" >
+                 </form>
+            </div>
+        </div>
+    </div>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+</style>
+{% endblock tovar %}
