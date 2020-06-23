@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+{% block header %} bg1 {% endblock header %}
+{% block tovar %}
+    <div align="center">
+        <span class="font24">Мы с вами свяжемся в ближайшее время для уточнения покупки</span>
+        <br>
+        <span class="font20">Номер вашего заказа: <b>{{ order_id }}</b></span>
+    </div>
+<style>
+    .font24{
+        font-size: 24px;
+    }
+    .font20{
+        font-size: 20px;
+    }
+</style>
+{% endblock tovar %}

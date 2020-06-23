@@ -51,6 +51,7 @@ class Delivery(models.Model):
 class Order(models.Model):
     """Покупка"""
     date = models.DateField(auto_now_add=True, verbose_name="Дата покупки")
+    contacts = models.TextField(default='')
 
     class Meta:
         verbose_name = "Покупка"

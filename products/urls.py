@@ -22,6 +22,5 @@ urlpatterns = [
     path('filter/', views.FilterTovarView.as_view(), name='filter'),
     path("<int:pk>/", views.TovarDetailView.as_view()),
     path("remove_from_cart/<int:product_id>/", views.remove_from_cart, name='remove_from_cart'),
-    path("get_cart/", views.get_cart, name='get_cart'),
-    path("buy/", views.buy, name='buy')
+    path("get_cart/", views.get_cart, name='get_cart')
 ]

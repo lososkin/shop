@@ -71,13 +71,18 @@ def remove_from_cart(request, product_id):
 def get_cart(request):
     cart = Cart(request)
     latest_products = Tovar.objects.order_by("-id")[: 3]
+    if request.method == 'POST':
+        try:
+            bot = telebot.TeleBot(settings.TOKEN)
+            bot.send_message(settings.TELEGRAM_ID, "Заказан товар")
+        except:
+            pass
+        order = Order.objects.create(contacts=request.POST.get('contacts'))
+        print(request.POST.get('contacts'))
+        items = cart.cart.item_set.all()
+        for item in items:
+            OrderProduct.objects.create(order=order, tovar= Tovar.objects.get(id=item.object_id), kol=item.quantity)
+        return render(request, 'products/after_buy.html', {'order_id': order.id,'latest_products': latest_products,"categories": Category.objects.all()})
     return render(request, 'cart.html', {'cart': cart, 'summary': cart.summary() ,'latest_products': latest_products,"categories": Category.objects.all()})
 
-def buy(request):
-    bot = telebot.TeleBot(settings.TOKEN)
-    bot.send_message(settings.TELEGRAM_ID, "Hello")
-    cart = Cart(request)
-    order = Order.objects.create()
-    items = cart.cart.item_set.all()
-    for item in items:
-        OrderProduct.objects.create(order=order, tovar= Tovar.objects.get(id=item.object_id), kol=item.quantity)
+
