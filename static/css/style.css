@@ -77,10 +77,9 @@ ol {
 /* CSS Document */
 
 header {
-    position: absolute;
     z-index: 9;
     width: 100%;
-    background-color: #00000045;
+    background-color: #dcbaae;
 }
 
 .toggle,
@@ -381,31 +380,24 @@ li > a:only-child:after {
 
 /*--/banner --*/
 .main-banner {
-    background: url(../images/banner.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    position: relative;
-    height: 20em;
 }
 
 .main-banner.inner {
-    background: url(../images/banner.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    position: relative;
-    min-height: 20em;
 }
 
 .bg1 {
     background-color: rgba(0, 0, 0, 0);
     margin-top: 0;
-    background-image: url('../shapka.jpg');
 }
 
 
@@ -835,7 +827,7 @@ h4.group.card-title {
 ol.breadcrumb {
     background: none;
     margin: 0;
-    padding: 1em 2em;
+    padding: 3px;
     background: #f7f7f7;
 }
 
@@ -1704,3 +1696,8 @@ a.move-top span {
 }
 
 /*--//responsive--*/
+
+.cherta {
+    height: 3px;
+    background-color: #e1e1e1;
+}
