@@ -388,7 +388,7 @@ li > a:only-child:after {
     -ms-background-size: cover;
     background-size: cover;
     position: relative;
-    min-height: 50em;
+    height: 20em;
 }
 
 .main-banner.inner {
@@ -405,7 +405,7 @@ li > a:only-child:after {
 .bg1 {
     background-color: rgba(0, 0, 0, 0);
     margin-top: 0;
-    background-image: url('../QUAJXI6XD5E.jpg');
+    background-image: url('../shapka.jpg');
 }
 
 

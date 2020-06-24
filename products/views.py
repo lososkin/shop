@@ -78,7 +78,6 @@ def get_cart(request):
         except:
             pass
         order = Order.objects.create(contacts=request.POST.get('contacts'))
-        print(request.POST.get('contacts'))
         items = cart.cart.item_set.all()
         for item in items:
             OrderProduct.objects.create(order=order, tovar= Tovar.objects.get(id=item.object_id), kol=item.quantity)
