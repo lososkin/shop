@@ -10,11 +10,11 @@
             <label for="drop" class="toggle">Menu</label>
             <input type="checkbox" id="drop">
             <ul class="menu mt-2">
-                <li class="active"><a href="/">Главная</a></li>
+                <!-- <li class="active"><a href="/">Главная</a></li> -->
                 <li>
                     <a href="{% url 'get_cart' %}">&#128722; <b>КОРЗИНА</b></a>
                 </li>
-                <li>
+                <!-- <li>
                     {% if user.is_authenticated %}
                     <span>{{ user.username }}</span>
                         <a href="{% url 'account_logout' %}"
@@ -29,7 +29,7 @@
                         Регистрация
                     </a>
                     {% endif %}
-                </li>
+                </li> -->
             </ul>
         </nav>
         <!-- //nav -->
