@@ -1374,9 +1374,9 @@ a.move-top span {
 /*-- //to-top --*/
 
 @media (max-width: 1366px) {
-    .main-banner {
+    /*.main-banner {
         min-height: 45em;
-    }
+    }*/
 
     .banner-info {
         padding: 16em 0 0em 3em;
@@ -1393,13 +1393,13 @@ a.move-top span {
         font-size: 2.3em;
     }
 
-    .main-banner {
+    /*.main-banner {
         min-height: 40em;
     }
 
     .main-banner.inner {
         min-height: 15em;
-    }
+    }*/
 }
 
 @media (max-width: 1080px) {
@@ -1408,9 +1408,9 @@ a.move-top span {
         letter-spacing: 2px;
     }
 
-    .main-banner {
+    /*.main-banner {
         min-height: 38em;
-    }
+    }*/
 
     h3.tittle {
         font-size: 2em !important;
@@ -1493,10 +1493,10 @@ a.move-top span {
         letter-spacing: 2px;
     }
 
-    .main-banner {
+    /*.main-banner {
         min-height: 38em;
     }
-
+*/
     .feature-grids h3,
     .bottom-gd.fea h3 {
         font-size: 0.9em;
@@ -1504,18 +1504,18 @@ a.move-top span {
 }
 
 @media (max-width: 800px) {
-    .main-banner.inner {
+   /* .main-banner.inner {
         min-height: 12em;
     }
-
+*/
     .banner-info {
         padding: 11em 0 0em 1em;
         width: 44%;
     }
 
-    .main-banner {
+   /* .main-banner {
         min-height: 30em;
-    }
+    }*/
 
     h3.tittle {
         font-size: 1.8em !important;
@@ -1589,9 +1589,9 @@ a.move-top span {
 }
 
 @media (max-width: 640px) {
-    .main-banner {
+    /*.main-banner {
         min-height: 28em;
-    }
+    }*/
 
     .banner-info {
         padding: 10em 0 0em 1em;
@@ -1627,10 +1627,10 @@ a.move-top span {
 }
 
 @media (max-width: 480px) {
-    .main-banner {
+    /*.main-banner {
         min-height: 25em;
     }
-
+*/
     .banner-info {
         padding: 9em 0 0em 1em;
         width: 58%;
@@ -1646,9 +1646,9 @@ a.move-top span {
         width: 96%;
     }
 
-    .main-banner.inner {
+   /* .main-banner.inner {
         min-height: 9em;
-    }
+    }*/
 }
 
 @media (max-width: 440px) {
@@ -1657,9 +1657,9 @@ a.move-top span {
         width: 68%;
     }
 
-    .main-banner {
+    /*.main-banner {
         min-height: 23em;
-    }
+    }*/
 
     .item-info-product h4 a {
         font-size: 14px !important;
